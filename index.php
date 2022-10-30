@@ -295,8 +295,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div id="map" class="contacts__map">
-                        </div>
+                    <?php the_field('find_us_map') ?>
                     </div>
                 </div>
                 <div class="row">
