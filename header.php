@@ -51,23 +51,17 @@
                     </div>
                 </div>
                 <nav class="row" data-slide="1">
-                    <ul class="header__nav">
-                        <li>
-                            <a class="header__nav-item" href="#about">Про компанию</a>
-                        </li>
-                        <li>
-                            <a class="header__nav-item" href="#specialists">Наша команда</a>
-                        </li>
-                        <li>
-                            <a class="header__nav-item" href="#toys">Игрушки</a>
-                        </li>
-                        <li>
-                            <a class="header__nav-item" href="#aboutus">Наша история</a>
-                        </li>
-                        <li>
-                            <a class="header__nav-item" href="#contacts">Контакты и отзывы</a>
-                        </li>
-                    </ul>
+                    <?php 
+                        wp_nav_menu( [
+                            'menu'            => 'Main', //какое меню по названию нам необходимо вывести
+                            'container'       => false, // чем можно обернуть наше меню false, 'div', 'nav'
+                            'menu_class'      => 'header__nav', // как в нашем меню
+                            'echo'            => true, // выводить в качестве html верстки
+                            'fallback_cb'     => 'wp_page_menu',
+                            'items_wrap'      => '<ul class="header__nav">%3$s</ul>', // как будет обернука каждая ссылка этого меню "%3$s" - обязательный элемент, который будет формировать наши ссылки
+                            'depth'           => 1, // уровень вложенности
+                        ] );
+                    ?>
                 </nav>
             </div>
             <div class="header__hamburger">
